@@ -1,0 +1,19 @@
+import collections
+
+
+def main():
+    n, m = map(int, input().split())
+
+    streets = collections.defaultdict(list)
+
+    for i in range(m):
+        a, b = map(int, input().split())
+        streets[a].append(b)
+        streets[b].append(a)
+
+    for i in range(1, n + 1):
+        print(len(streets[i]))
+
+
+if __name__ == '__main__':
+    main()
