@@ -1,0 +1,20 @@
+def main():
+    n, k = map(int, input().split())
+ 
+    l = []
+ 
+    for i in range(n):
+        a, b = map(int, input().split())
+        l.append((a, b))
+ 
+    l.sort()
+ 
+    prev = 0
+    for i in range(n):
+        prev += l[i][1]
+        if k <= prev:
+            print(l[i][0])
+            break
+ 
+if __name__ == '__main__':
+    main()
