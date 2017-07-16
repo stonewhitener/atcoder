@@ -1,0 +1,27 @@
+import collections
+
+
+def main():
+    n = int(input())
+
+    cuts = []
+    chars = set()
+
+    for i in range(n):
+        s = input()
+        d = collections.defaultdict(int)
+        for c in s:
+            chars.add(c)
+            d[c] += 1
+        cuts.append(d)
+
+    res = ''
+    for c in sorted(chars):
+        count = min([d[c] for d in cuts])
+        res = res + str(c * count)
+
+    print(res)
+
+
+if __name__ == '__main__':
+    main()
